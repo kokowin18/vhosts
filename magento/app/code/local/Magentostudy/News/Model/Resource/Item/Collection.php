@@ -4,7 +4,7 @@
 *News collection
 */
 
-class Magentostudy_News_Model_Resource_Item_Colletion extends
+class Magentostudy_News_Model_Resource_Item_Collection extends
 Mage_Core_Model_Resource_Db_Collection_Abstract
 {
 	/**

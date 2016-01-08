@@ -1,0 +1,19 @@
+a:5:{i:0;s:901:"Error in file: "C:\vhosts\magento\app\code\local\Magentostudy\News\sql\magentostudy_news_setup\install-1.6.0.0.2.php" - SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'news_item' already exists, query was: CREATE TABLE `news_item` (
+  `item_id` int UNSIGNED NOT NULL auto_increment COMMENT 'News article id' ,
+  `title` varchar(255) NULL COMMENT 'Article title' ,
+  `author` varchar(63) NULL default NULL COMMENT 'The author name' ,
+  `content` text NULL default NULL COMMENT 'Article content' ,
+  `image` varchar(255) NULL default NULL COMMENT 'Article image' ,
+  `time_published` date NULL default NULL COMMENT 'Date of article creation' ,
+  `time_created` timestamp NULL default NULL COMMENT 'Time of article creation' ,
+  PRIMARY KEY (`item_id`),
+  INDEX `IDX_NEWS_ITEM_TIME_PUBLISHED` (`time_published`)
+) COMMENT='News articles' ENGINE=INNODB charset=utf8 COLLATE=utf8_general_ci";i:1;s:900:"#0 C:\vhosts\magento\app\code\core\Mage\Core\Model\Resource\Setup.php(644): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 C:\vhosts\magento\app\code\core\Mage\Core\Model\Resource\Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '1.6.0.0.3')
+#2 C:\vhosts\magento\app\code\core\Mage\Core\Model\Resource\Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('1.6.0.0.3')
+#3 C:\vhosts\magento\app\code\core\Mage\Core\Model\Resource\Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 C:\vhosts\magento\app\code\core\Mage\Core\Model\App.php(428): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 C:\vhosts\magento\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Model_App->_initModules()
+#6 C:\vhosts\magento\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#7 C:\vhosts\magento\index.php(83): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:16:"/images/logo.gif";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}
