@@ -12,6 +12,12 @@
 				<class>Magentostudy_News_Model</class>
 				<resourceModel>magentostudy_news_resource</resourceModel>
 			</magentostudy_news>
+
+			<helpers>
+				<magentostudy_news>
+				<class>Magentostudy_News_Helper</class>
+				</magentostudy_news>
+			</helpers>
 			
 			<magentostudy_news_resource>
 				<class>Magentostudy_News_Model_Resource</class>
