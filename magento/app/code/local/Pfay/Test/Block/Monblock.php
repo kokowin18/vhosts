@@ -3,6 +3,8 @@ class Pfay_Test_Block_Monblock extends Mage_Core_Block_Template
 {
      public function methodblock()
      {
+//$helper = Mage::helper('test');
+   // return '2*2 = '.$helper->bytwo(2);
        //on initialize la variable
         $retour='';
         /* we are doing the query to select all elements of the pfay_test table (thanks to our model test/test and we sort them by id_pfay_test */

@@ -9,6 +9,7 @@ class Pfay_Test_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Acti
      }
       public function indexAction()
       {
+      	echo 'admin page';
          $this->_initAction();
          $this->renderLayout();
       }

@@ -8,13 +8,13 @@
 
   <admin>
        <routers>
-           <test>
+           <abctest>
               <use>admin</use>
               <args>
                  <module>Pfay_Test</module>
                  <frontName>admintest</frontName>
               </args>
-           </test>
+           </abctest>
         </routers>
    </admin>
    <adminhtml>
@@ -45,6 +45,11 @@
             <class>Pfay_Test_Block</class>
          </test>
       </blocks>
+      <helpers>
+        <test>
+          <class>Pfay_Test_Helper</class>
+        </test>
+      </helpers>
       <models>
         <test>
           <class>Pfay_Test_Model</class>

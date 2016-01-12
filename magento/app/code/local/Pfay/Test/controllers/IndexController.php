@@ -30,7 +30,7 @@ class Pfay_Test_IndexController extends Mage_Core_Controller_Front_Action
       $contact->setData('telephone', $telephone);
       $contact->save();
    }
-    $this->_redirect('*/');
+    $this->_redirect('test/index/index/');
   }
 }
 
