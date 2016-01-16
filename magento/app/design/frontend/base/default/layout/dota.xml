@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<dota_index_index>
+		<update handel="page_two_columns_right" />
+		<reference name="content">
+			<block type="dota/welcome" />
+		</reference>
+	</dota_index_index>
+</layout>

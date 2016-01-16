@@ -1,0 +1,35 @@
+<?xml version = "1.0"?>
+<config>
+	<modules>
+		<Example_Dota>
+			<version>0.1.0</version>
+		</Example_Dota>
+	</modules>
+
+
+	<global>
+		<blocks>
+         <dota>
+            <class>Example_Dota_Block</class>
+         </dota>
+      </blocks>
+    </global>
+	<frontend>
+		<routers>
+			<dota>
+				<use>standard</use>
+				<args>
+					<module>Example_Dota</module>
+					<frontName>dota</frontName>
+				</args>
+			</dota>
+		</routers>
+		<layout>
+			<updates>
+				<dota>
+					<file>dota.xml</file>
+				</dota>
+			</updates>
+		</layout>
+	</frontend>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+      <Pfay_MyProduct_Block>
+        <version>1.0.0</version>
+      </Pfay_MyProduct_Block>
+    </modules>
+    <global>
+      <blocks>
+        <catalog>
+          <rewrite>
+            <product_view>Pfay_MyProduct_Block_Catalog_Product_View</product_view>
+          </rewrite>
+        </catalog>
+      </blocks>
+    </global>
+</config>

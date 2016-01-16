@@ -40,6 +40,17 @@
   </adminhtml>
 
     <global>
+       <events>
+            <controller_front_init_routers>
+                <observers>
+                    <pfay_test_model_observer>
+                        <type>singleton</type>                          
+                        <class>Pfay_Test_Model_Observer</class>
+                        <method>checkForConfigRequest</method>
+                    </pfay_test_model_observer>
+                </observers>
+            </controller_front_init_routers>
+        </events>
       <blocks>
          <test>
             <class>Pfay_Test_Block</class>
