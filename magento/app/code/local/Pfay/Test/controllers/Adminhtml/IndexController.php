@@ -9,9 +9,18 @@ class Pfay_Test_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Acti
      }
       public function indexAction()
       {
-      	echo 'admin page';
-         $this->_initAction();
-         $this->renderLayout();
+        $this->_title($this->__('Address'))->_title($this->__('Address Book'));
+      	//echo 'admin page';
+        $this->_initAction();
+        $this->_addContent($this->getLayout()->createBlock('test/adminhtml_grid'));
+        $this->renderLayout();
+      }
+
+      public function gridAction(){
+        $this->loadLayout();
+        $this->getResponse()->setBody(
+        $this->getLayout()->createBlock('test/adminhtml_test_edit_grid')->toHtml()
+        );
       }
       public function editAction()
       {

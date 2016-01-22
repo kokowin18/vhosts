@@ -18,13 +18,6 @@
         </routers>
    </admin>
    <adminhtml>
-     <layout>
-        <updates>
-            <test>
-                <file>test.xml</file>
-             </test>
-        </updates>
-     </layout>
      <menu>
         <test translate="title" module="adminhtml">
            <title>Ko plugins</title>
