@@ -1,0 +1,36 @@
+<config>
+	<tabs>
+		<ko translate="label">
+			<label>Ko Extension</label>
+			<sort_order>400</sort_order>
+		</ko>
+	</tabs>
+	<sections>
+		<test translate="label" module="test">
+		<class>separator-top</class>
+		<label>Test</label>
+		<tab>ko</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>299</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>
+		</test>
+		<general>
+		<groups>
+		<locale>
+		<fields>
+		<custom_field translate="label">
+		<label>Custom Field</label>
+		<frontend_type>text</frontend_type>
+		<sort_order>100</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>
+		</custom_field>
+		</fields>
+		</locale>
+		</groups>
+</general>
+	</sections>
+</config>

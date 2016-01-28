@@ -6,7 +6,7 @@ class Pfay_Test_Block_Adminhtml_Test_Edit_Tab_Form extends Mage_Adminhtml_Block_
        $form = new Varien_Data_Form();
        $this->setForm($form);
        $fieldset = $form->addFieldset('test_form',
-                                       array('legend'=>'ref information'));
+                                       array('legend'=>'Contact information'));
         $fieldset->addField('nom', 'text',
                        array(
                           'label' => 'First',

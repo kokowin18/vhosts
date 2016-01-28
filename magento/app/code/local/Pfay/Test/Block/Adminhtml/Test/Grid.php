@@ -26,17 +26,17 @@ class Pfay_Test_Block_Adminhtml_Test_Grid extends Mage_Adminhtml_Block_Widget_Gr
                ));
        $this->addColumn('nom',
                array(
-                    'header' => 'nom',
+                    'header' => 'First',
                     'align' =>'left',
                     'index' => 'nom',
               ));
        $this->addColumn('prenom', array(
-                    'header' => 'prenom',
+                    'header' => 'Last',
                     'align' =>'left',
                     'index' => 'prenom',
              ));
         $this->addColumn('telephone', array(
-                     'header' => 'telephone',
+                     'header' => 'Telephone',
                      'align' =>'left',
                      'index' => 'telephone',
           ));
@@ -46,4 +46,16 @@ class Pfay_Test_Block_Adminhtml_Test_Grid extends Mage_Adminhtml_Block_Widget_Gr
     {
          return $this->getUrl('*/*/edit', array('id' => $row->getId()));
     }
+    protected function _prepareMassaction()
+    {
+      $this->setMassactionIdField('test_id');
+      $this->getMassactionBlock()->setFormFieldName('test');
+       $this->getMassactionBlock()->addItem('delete', array(
+      'label'=> Mage::helper('test')->__('Delete'),
+      'url'  => $this->getUrl('*/*/massDelete', array('' => '')),        // public function massDeleteAction() in Mage_Adminhtml_Tax_RateController
+      'confirm' => Mage::helper('test')->__('Are you sure?')
+      ));
+      return $this;
+    }
+
 }

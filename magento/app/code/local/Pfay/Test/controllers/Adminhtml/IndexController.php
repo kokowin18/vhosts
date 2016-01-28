@@ -3,7 +3,7 @@ class Pfay_Test_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Acti
 {
     protected function _initAction()
     {
-        $this->loadLayout()->_setActiveMenu('test/set_time')
+        $this->loadLayout()->_setActiveMenu('test/contact')
                 ->_addBreadcrumb('test Manager','test Manager');
        return $this;
      }
@@ -30,7 +30,7 @@ class Pfay_Test_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Acti
            {
              Mage::register('test_data', $testModel);
              $this->loadLayout();
-             $this->_setActiveMenu('test/set_time');
+             $this->_setActiveMenu('test/contact');
              $this->_addBreadcrumb('test Manager', 'test Manager');
              $this->_addBreadcrumb('Test Description', 'Test Description');
              $this->getLayout()->getBlock('head')
@@ -116,4 +116,25 @@ class Pfay_Test_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Acti
              }
             $this->_redirect('*/*/');
        }
+      public function massDeleteAction(){
+            $testIds = $this->getRequest()->getParam('test');      // $this->getMassactionBlock()->setFormFieldName('test_id'); from Mage_Adminhtml_Block_Tax_Rate_Grid
+            if(!is_array($testIds)) {
+              Mage::getSingleton('adminhtml/session')->addError(Mage::helper('test')->__('Please select at least one contact!'));
+            } 
+            else {
+              try {
+                $rateModel = Mage::getModel('test/test');
+                foreach ($testIds as $testId) {
+                  $rateModel->load($testId)->delete();
+                }
+                Mage::getSingleton('adminhtml/session')->addSuccess(
+                  Mage::helper('test')->__('Total of %d record(s) were deleted.', count($testIds))
+                );
+              } catch (Exception $e) {
+                  Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+                }
+            }
+             
+            $this->_redirect('*/*/index');
+      }
 }
