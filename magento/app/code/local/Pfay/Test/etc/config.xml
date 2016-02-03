@@ -2,7 +2,7 @@
   <config>
      <modules>
         <Pfay_Test>
-          <version>1.0.0</version>
+          <version>1.0.3</version>
         </Pfay_Test>
      </modules>
 
@@ -70,18 +70,24 @@
       </models>
       <!-- allow the plugin to read and write -->
       <resources>
-        <!-- connection to write -->
-        <test_write>
-          <connection>
-            <use>core_write</use>
-          </connection>
-        </test_write>
-        <!-- connection to read -->
-        <test_read>
-          <connection>
-            <use>core_read</use>
-          </connection>
-        </test_read>
+          <pfay_test_setup>
+              <setup>
+                  <module>Pfay_Test</module>
+                  <class>Mage_Core_Model_Resource_Setup</class>
+              </setup>
+          </pfay_test_setup>
+          <!-- connection to write -->
+          <test_write>
+              <connection>
+                  <use>core_write</use>
+              </connection>
+          </test_write>
+          <!-- connection to read -->
+          <test_read>
+              <connection>
+                  <use>core_read</use>
+              </connection>
+          </test_read>
       </resources>
  
     </global>

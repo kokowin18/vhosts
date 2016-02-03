@@ -40,6 +40,15 @@ class Pfay_Test_Block_Adminhtml_Test_Grid extends Mage_Adminhtml_Block_Widget_Gr
                      'align' =>'left',
                      'index' => 'telephone',
           ));
+         $this->addColumn('status', array(
+                     'header' => 'Status',
+                     'align' =>'left',
+                     'index' => 'status',
+                     'type' => 'options',
+                     'options' => array(
+                      1=>'Enabled',
+                      2=>'Disabled')
+          ));
          return parent::_prepareColumns();
     }
     public function getRowUrl($row)
@@ -50,7 +59,12 @@ class Pfay_Test_Block_Adminhtml_Test_Grid extends Mage_Adminhtml_Block_Widget_Gr
     {
       $this->setMassactionIdField('test_id');
       $this->getMassactionBlock()->setFormFieldName('test');
-       $this->getMassactionBlock()->addItem('delete', array(
+      $this->getMassactionBlock()->addItem('update', array(
+      'label'=> Mage::helper('test')->__('Update'),
+      'url'  => $this->getUrl('*/*/massUpdate', array('' => '')),        // public function massUpdateAction() in Mage_Adminhtml_Tax_RateController
+      'confirm' => Mage::helper('test')->__('Are you sure?')
+      ));
+      $this->getMassactionBlock()->addItem('delete', array(
       'label'=> Mage::helper('test')->__('Delete'),
       'url'  => $this->getUrl('*/*/massDelete', array('' => '')),        // public function massDeleteAction() in Mage_Adminhtml_Tax_RateController
       'confirm' => Mage::helper('test')->__('Are you sure?')
